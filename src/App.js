@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Navbar from './components/Navbar'
+import PostsList from './components/PostsList'
+import Modal from './components/Modal'
 
-function App() {
+export default function App() {
+  let [showModal,setShowModal] = useState(false);
+  let [posts,setPosts] = useState([
+    {
+      id: 1,
+      title: 'First post'
+    },
+    {
+      id: 2,
+      title: 'Second post'
+    },
+    {
+      id: 3,
+      title: 'Third post'
+    }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar setShowModal = {setShowModal} />
+      <PostsList posts={posts}/>
+      {showModal && <Modal danger>
+        {/* modal content */}
+        <h1>Zoom class is available now. </h1>
+        <p>Feel free to <a href="">join</a> here</p>
+        <button onClick={()=>setShowModal(false)}>close</button>
+      </Modal>}
+    </>
+  )
 }
 
-export default App;

@@ -1,0 +1,18 @@
+.postsList{
+    /* background-color: rgba(9, 181, 248, 0.555); */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.postsList .single-post{
+    background-color: #fff;
+    flex: 1;
+    margin: 20px;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}

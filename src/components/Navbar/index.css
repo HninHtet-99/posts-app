@@ -1,0 +1,11 @@
+.navbar{
+    background-color: #e2f3f5;
+    padding: 10px;
+}
+.navbar .container ul{
+    display: flex;
+}
+.navbar .container li{
+    list-style-type: none;
+    margin: 0 20px ;
+}
